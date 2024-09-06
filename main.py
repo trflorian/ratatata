@@ -48,7 +48,7 @@ def play_game_with_calibration(
     bbox = {
         "left": sx,
         "width": w,
-        "top": sy + 90,  # offset for the top bar
+        "top": sy + 120,  # offset for the top badfr
         "height": h,
         "mon": 1,
     }
