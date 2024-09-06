@@ -28,7 +28,7 @@ def calibrate_with_template(
 ) -> CalibrationData:
     sct = mss()
 
-    template = cv2.imread("template.png")
+    template = cv2.imread("images/template.png")
 
     while True:
         img = capture_rgb_screen(sct, sct.monitors[1])
@@ -86,9 +86,12 @@ def calibrate_with_template(
             2,
         )
 
-        cv2.imshow("Caliration", img)
-        key = cv2.waitKey(1)
+        # resize calibration window
+        img = cv2.resize(img, (800, 600))
 
+        cv2.imshow("Caliration", img)
+
+        key = cv2.waitKey(1)
         if key == ord("q"):
             return None
         if key == 13:  # Enter
