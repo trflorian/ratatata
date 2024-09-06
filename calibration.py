@@ -87,14 +87,16 @@ def calibrate_with_template(
         )
 
         # resize calibration window
-        img = cv2.resize(img, (800, 600))
+        img = cv2.resize(img, (1280, 720))
 
         cv2.imshow("Caliration", img)
 
         key = cv2.waitKey(1)
         if key == ord("q"):
+            cv2.destroyAllWindows()
             return None
         if key == 13:  # Enter
+            cv2.destroyAllWindows()
             return CalibrationData(
                 matches=matches,
                 template_width=template.shape[1],
